@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{{title}}</title>
+    </head>
+<body>
+    <main>
+    <nav>
+        <a href="/blog/">Blog</a> |
+        <a href="/newpost/">New Post</a> |
+        <a href="/UserPage/">Users</a> |
+        <a href="/login/">Login</a> |
+        <a href="/logout/">Logout</a> |
+        <a href="/signup">Register</a> |
+    </nav>
+
+    <div class="container">
+
+        {% with messages = get_flashed_messages() %}
+            {% for message in messages %}
+                <div class="flash_message">{{message|safe}}</div>
+            {% endfor %}
+        {% endwith %}
+
+        
+        {% block content %}
+        {% endblock %}
+
+    </div>
+    </main>
+
+</body>
+</html>
